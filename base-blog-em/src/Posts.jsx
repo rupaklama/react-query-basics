@@ -18,7 +18,9 @@ export function Posts() {
   console.log(selectedPost);
 
   // useQuery returns an Object with lots of properties
-  // first arg - 'posts' is the 'key' to name this current query
+  // first arg - 'posts' is the 'key' to name this current query. It must be unique in our whole app.
+  // note - React Query uses the 'key' for cache/stale time. Must be unique in our whole codebase.
+
   // second arg - is the Async Query Function which fetches the data
   // third arg - is the Option Object & the Option we are going to update is stale time in milliseconds,
   // allowing our posts to be out of date or outdated by 2 secs. Data is not fresh anymore after 2 secs.
