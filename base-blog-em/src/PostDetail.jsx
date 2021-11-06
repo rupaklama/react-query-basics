@@ -23,7 +23,7 @@ export function PostDetail({ post }) {
   // therefore, we need to use Anonymous Arrow Function with the param to return a value
 
   // note - In this way ['query key', post.id], we are treating Query Key as a Dependency Array for the query.
-  // Now, when the ‘post.id’ changes in this query key, react query creates a New Query with
+  // Now, when the ‘post.id’ changes in this query key, react query creates a New Query with fresh data &
   // new stale/cache time - completely brand new query on changing the dependency array.
   // This avoids NOT UPDATING related data on render.
   const { data, isLoading, isError, error } = useQuery(['comments', post.id], () => fetchComments(post.id));
